@@ -1,0 +1,29 @@
+name: Codex JetBrains US Auto
+desc: 自动筛选并测速美国节点，指定 Codex 与 JetBrains 使用
+
+mode: rule
+
+proxy-groups:
+  - name: Codex-US
+    type: url-test
+    include-all: true
+    filter: "(美国|Relay-US|🇺🇸|🇺🇲)"
+    url: https://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+
+rules:
+  - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
+  - PROCESS-NAME,Codex,Codex-US
+
+  - PROCESS-PATH,/Applications/IntelliJ IDEA.app/Contents/MacOS/idea,Codex-US
+  - PROCESS-NAME,idea,Codex-US
+
+  - PROCESS-PATH,/Applications/WebStorm.app/Contents/MacOS/webstorm,Codex-US
+  - PROCESS-NAME,webstorm,Codex-US
+
+  - PROCESS-PATH,/Applications/PyCharm.app/Contents/MacOS/pycharm,Codex-US
+  - PROCESS-NAME,pycharm,Codex-US
+
+  - PROCESS-PATH,/Applications/Android Studio.app/Contents/MacOS/studio,Codex-US
+  - PROCESS-NAME,studio,Codex-US

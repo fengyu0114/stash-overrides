@@ -10,7 +10,7 @@ proxy-groups:
     filter: "(美国|Relay-US|🇺🇸|🇺🇲)"
     url: https://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
+    tolerance: 10
 
 rules:
   - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US

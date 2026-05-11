@@ -15,15 +15,3 @@ proxy-groups:
 rules:
   - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
   - PROCESS-NAME,Codex,Codex-US
-
-  - PROCESS-PATH,/Applications/IntelliJ IDEA.app/Contents/MacOS/idea,Codex-US
-  - PROCESS-NAME,idea,Codex-US
-
-  - PROCESS-PATH,/Applications/WebStorm.app/Contents/MacOS/webstorm,Codex-US
-  - PROCESS-NAME,webstorm,Codex-US
-
-  - PROCESS-PATH,/Applications/PyCharm.app/Contents/MacOS/pycharm,Codex-US
-  - PROCESS-NAME,pycharm,Codex-US
-
-  - PROCESS-PATH,/Applications/Android Studio.app/Contents/MacOS/studio,Codex-US
-  - PROCESS-NAME,studio,Codex-US

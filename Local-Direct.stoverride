@@ -1,0 +1,24 @@
+name: Local Apps Direct
+desc: UGREEN NAS 和 TeamViewer 直连
+
+mode: rule
+
+rules:
+  # 绿联云 / UGREEN NAS 直连
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/MacOS/UGREEN NAS,DIRECT
+  - PROCESS-NAME,UGREEN NAS,DIRECT
+  - PROCESS-NAME,UGREEN NAS Helper,DIRECT
+  - PROCESS-NAME,UgAgent,DIRECT
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper.app/Contents/MacOS/UGREEN NAS Helper,DIRECT
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (Renderer).app/Contents/MacOS/UGREEN NAS Helper (Renderer),DIRECT
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (GPU).app/Contents/MacOS/UGREEN NAS Helper (GPU),DIRECT
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (Plugin).app/Contents/MacOS/UGREEN NAS Helper (Plugin),DIRECT
+
+  # TeamViewer 直连
+  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/MacOS/TeamViewer,DIRECT
+  - PROCESS-NAME,TeamViewer,DIRECT
+  - PROCESS-NAME,TeamViewer_Service,DIRECT
+  - PROCESS-NAME,TeamViewer_Desktop,DIRECT
+  - PROCESS-NAME,TeamViewer Helper,DIRECT
+  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Service,DIRECT
+  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Desktop,DIRECT

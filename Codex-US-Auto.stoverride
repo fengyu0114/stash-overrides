@@ -1,6 +1,6 @@
 name: Codex ChatGPT Auto
 desc: Codex/ChatGPT 使用美国或日本节点自动测速
-
+# https://raw.githubusercontent.com/fengyu0114/stash-overrides/main/Codex-US-Auto.stoverride
 mode: rule
 
 proxy-groups:

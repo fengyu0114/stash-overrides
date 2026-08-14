@@ -8,7 +8,7 @@ proxy-groups:
   - name: Codex-US
     type: url-test
     include-all: true
-    filter: "(?i)(美国|Relay-US|\\bUS\\b|USA|United States|🇺🇸|🇺🇲)"
+    filter: "(?i)(美国|日本|Relay-US|Relay-JP|\\bUS\\b|\\bJP\\b|USA|United States|Japan|🇺🇸|🇺🇲|🇯🇵)"
     url: http://www.gstatic.com/generate_204
     interval: 60
     tolerance: 0

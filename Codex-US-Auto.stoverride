@@ -1,5 +1,5 @@
-name: Codex JetBrains US Auto
-desc: 自动筛选并测速美国节点，指定 Codex 与 JetBrains 使用
+name: Codex ChatGPT US Auto
+desc: 自动筛选并测速美国节点，指定 Codex/ChatGPT 使用；绿联云和 TeamViewer 直连
 
 mode: rule
 
@@ -7,16 +7,30 @@ proxy-groups:
   - name: Codex-US
     type: url-test
     include-all: true
-    filter: "(美国|Relay-US|🇺🇸|🇺🇲)"
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 10
+    filter: "(?i)(美国|Relay-US|\\bUS\\b|USA|United States|🇺🇸|🇺🇲)"
+    url: http://www.gstatic.com/generate_204
+    interval: 60
+    tolerance: 0
+    lazy: false
 
 rules:
+  # 本机客户端直连
   - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/MacOS/UGREEN NAS,DIRECT
   - PROCESS-NAME,UGREEN NAS,DIRECT
   - PROCESS-PATH,/Applications/TeamViewer.app/Contents/MacOS/TeamViewer,DIRECT
   - PROCESS-NAME,TeamViewer,DIRECT
-  
-  - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
+
+  # Codex CLI / 旧 Codex Desktop / 新 ChatGPT Desktop
+  - PROCESS-NAME,codex,Codex-US
   - PROCESS-NAME,Codex,Codex-US
+  - PROCESS-NAME,Codex (Service),Codex-US
+  - PROCESS-NAME,ChatGPT,Codex-US
+  - PROCESS-NAME,ChatGPT (Service),Codex-US
+  - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
+  - PROCESS-PATH,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT,Codex-US
+
+  # OpenAI / ChatGPT 域名兜底
+  - DOMAIN-SUFFIX,chatgpt.com,Codex-US
+  - DOMAIN-SUFFIX,openai.com,Codex-US
+  - DOMAIN-SUFFIX,oaistatic.com,Codex-US
+  - DOMAIN-SUFFIX,oaiusercontent.com,Codex-US

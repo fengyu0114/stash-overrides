@@ -13,5 +13,10 @@ proxy-groups:
     tolerance: 10
 
 rules:
+  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/MacOS/UGREEN NAS,DIRECT
+  - PROCESS-NAME,UGREEN NAS,DIRECT
+  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/MacOS/TeamViewer,DIRECT
+  - PROCESS-NAME,TeamViewer,DIRECT
+  
   - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
   - PROCESS-NAME,Codex,Codex-US

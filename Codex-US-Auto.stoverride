@@ -1,11 +1,10 @@
-name: Codex ChatGPT US Auto
-desc: 自动筛选并测速美国节点，指定 Codex/ChatGPT 使用；绿联云和 TeamViewer 直连
-# https://raw.githubusercontent.com/fengyu0114/stash-overrides/main/Codex-US-Auto.stoverride
+name: Codex ChatGPT Auto
+desc: Codex/ChatGPT 使用美国或日本节点自动测速
 
 mode: rule
 
 proxy-groups:
-  - name: Codex-US
+  - name: Codex-AI
     type: url-test
     include-all: true
     filter: "(?i)(美国|日本|Relay-US|Relay-JP|\\bUS\\b|\\bJP\\b|USA|United States|Japan|🇺🇸|🇺🇲|🇯🇵)"
@@ -15,36 +14,17 @@ proxy-groups:
     lazy: false
 
 rules:
-  # 绿联云 / UGREEN NAS 直连
-  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/MacOS/UGREEN NAS,DIRECT
-  - PROCESS-NAME,UGREEN NAS,DIRECT
-  - PROCESS-NAME,UGREEN NAS Helper,DIRECT
-  - PROCESS-NAME,UgAgent,DIRECT
-  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper.app/Contents/MacOS/UGREEN NAS Helper,DIRECT
-  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (Renderer).app/Contents/MacOS/UGREEN NAS Helper (Renderer),DIRECT
-  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (GPU).app/Contents/MacOS/UGREEN NAS Helper (GPU),DIRECT
-  - PROCESS-PATH,/Applications/UGREEN NAS.app/Contents/Frameworks/UGREEN NAS Helper (Plugin).app/Contents/MacOS/UGREEN NAS Helper (Plugin),DIRECT
-
-  # TeamViewer 直连
-  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/MacOS/TeamViewer,DIRECT
-  - PROCESS-NAME,TeamViewer,DIRECT
-  - PROCESS-NAME,TeamViewer_Service,DIRECT
-  - PROCESS-NAME,TeamViewer_Desktop,DIRECT
-  - PROCESS-NAME,TeamViewer Helper,DIRECT
-  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Service,DIRECT
-  - PROCESS-PATH,/Applications/TeamViewer.app/Contents/Helpers/TeamViewer_Desktop,DIRECT
-
   # Codex CLI / 旧 Codex Desktop / 新 ChatGPT Desktop
-  - PROCESS-NAME,codex,Codex-US
-  - PROCESS-NAME,Codex,Codex-US
-  - PROCESS-NAME,Codex (Service),Codex-US
-  - PROCESS-NAME,ChatGPT,Codex-US
-  - PROCESS-NAME,ChatGPT (Service),Codex-US
-  - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-US
-  - PROCESS-PATH,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT,Codex-US
+  - PROCESS-NAME,codex,Codex-AI
+  - PROCESS-NAME,Codex,Codex-AI
+  - PROCESS-NAME,Codex (Service),Codex-AI
+  - PROCESS-NAME,ChatGPT,Codex-AI
+  - PROCESS-NAME,ChatGPT (Service),Codex-AI
+  - PROCESS-PATH,/Applications/Codex.app/Contents/MacOS/Codex,Codex-AI
+  - PROCESS-PATH,/Applications/ChatGPT.app/Contents/MacOS/ChatGPT,Codex-AI
 
   # OpenAI / ChatGPT 域名兜底
-  - DOMAIN-SUFFIX,chatgpt.com,Codex-US
-  - DOMAIN-SUFFIX,openai.com,Codex-US
-  - DOMAIN-SUFFIX,oaistatic.com,Codex-US
-  - DOMAIN-SUFFIX,oaiusercontent.com,Codex-US
+  - DOMAIN-SUFFIX,chatgpt.com,Codex-AI
+  - DOMAIN-SUFFIX,openai.com,Codex-AI
+  - DOMAIN-SUFFIX,oaistatic.com,Codex-AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,Codex-AI

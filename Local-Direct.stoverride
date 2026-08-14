@@ -1,6 +1,6 @@
 name: Local Apps Direct
 desc: UGREEN NAS 和 TeamViewer 直连
-
+# https://raw.githubusercontent.com/fengyu0114/stash-overrides/main/Local-Direct.stoverride
 mode: rule
 
 rules:

@@ -1,6 +1,6 @@
 name: Codex ChatGPT US Auto
 desc: 自动筛选并测速美国节点，指定 Codex/ChatGPT 使用；绿联云和 TeamViewer 直连
-
+# https://raw.githubusercontent.com/fengyu0114/stash-overrides/main/Codex-US-Auto.stoverride
 mode: rule
 
 proxy-groups:
